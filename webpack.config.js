@@ -46,8 +46,18 @@ const config = {
                 use: [stylesHandler, 'css-loader', 'postcss-loader'],
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+                test: /\.(eot|svg|ttf|woff|woff2|png|jpe?g|gif)$/i,
+                //type: 'asset',
+                use: [
+                    {
+                      loader: 'file-loader',
+                    },
+                ]
+            },
+            {
+                test: /\.(webp)$/i,
                 type: 'asset',
+                loader: 'webp-loader'
             },
 
             // Add your rules for custom modules here
