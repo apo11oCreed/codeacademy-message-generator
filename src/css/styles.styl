@@ -1,14 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import "../../node_modules/normalize.css/normalize.css"
 @import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
+fontsize = 5vw
+
 *
+    font-family 'Cormorant Garamond', serif
+    font-weight 600
+
+body
+    background-color black
+    margin 2rem 0
+    h1
+        color white
+    article
+        display flex
+        justify-content center
+        margin-top 1rem
+        position relative
+        blockquote
+            position absolute
+            font-size fontsize
+            padding 1rem
+            text-align center
+            line-height 1
+            q
+                position relative
+                color red
+        img
+            margin 0 auto
+
+strong
+    text-transform uppercase
     font-family 'Archivo', sans-serif
 
-blockquote
-    q
-        position relative
-        &:before
-            position absolute
-            left -0.5rem
-            top 0
+#app
+    opacity 0.0

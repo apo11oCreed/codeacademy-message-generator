@@ -7,7 +7,7 @@ import Dt4 from './images/dt_04.jpeg'
 
 const jq = $.noConflict(),
 nouns=['wall','burder','covfefe','MAGA','loser','African American'],
-verbs=['shutdown','pay','covfefe'],
+verbs=['shutdown','pay','excuse'],
 adjs=['huge','fake','disgusting','biggly'],
 imgs=[Dt1,Dt2,Dt3,Dt4];
 let 
@@ -16,14 +16,16 @@ verb,
 noun,
 adj,
 quote,
-img;
+img,
+app;
 
 (function($){
 
-    noun=nouns[Math.floor((Math.random() * adjs.length))];
-    adj=adjs[Math.floor((Math.random() * adjs.length))];
-    verb=verbs[Math.floor((Math.random() * verbs.length))];
+    noun='<strong>' + nouns[Math.floor((Math.random() * adjs.length))] + '</strong>';
+    adj='<strong>' + adjs[Math.floor((Math.random() * adjs.length))] + '</strong>';
+    verb='<strong>' + verbs[Math.floor((Math.random() * verbs.length))] + '</strong>';
     img=imgs[Math.floor((Math.random() * imgs.length))];
+    app=document.getElementById('app');
 
     quotes = [
         `I will build a ${adj}, ${adj} ${noun} on our southern border, and I will have Mexico ${verb} for that ${noun}. Mark my words.`,
@@ -38,8 +40,21 @@ img;
     $('#app > blockquote > q').html(quote);
     $('#app').append('<img class="img-fluid" src="' + img + '" alt="Donald Trump" />');
     
-})(jq);
+    const appAnimate=app.animate([
+        {
+            opacity:'1.0',
+        },
+        ],1000,()=>{}
+    );
 
-//I will build a great, great [noun] on our southern border, and I will have Mexico [verb] for that [noun]. Mark my words.
-//I have a great relationship with [noun]s, as you possibly have heard. I just have great respect for them. And they [verb] me. I [verb] them.
-//To be blunt, [noun]s would [verb] for me. They just would. Why? Maybe because I'm so good looking.
+    appAnimate.play(()=>{
+        $('#app').css('opacity','1.0');
+    });
+
+    appAnimate.addEventListener('finish',()=>{
+
+        $('#app').css('opacity','1.0');
+
+    });
+    
+})(jq);
