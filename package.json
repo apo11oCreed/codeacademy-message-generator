@@ -7,7 +7,8 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -31,6 +32,7 @@
   "dependencies": {
     "bootstrap": "^5.1.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "html-entities": "^2.3.3",
     "jquery": "^3.6.0",
     "normalize.css": "^8.0.1",
